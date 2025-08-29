@@ -14,6 +14,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { postData } from '../../../services/FetchNodeAdminServices'
 import Swal from 'sweetalert2'
+import logo from '../../../assets/logo.png'
 import { useNavigate } from 'react-router-dom';
 function Copyright(props) {
 
@@ -73,8 +74,12 @@ export default function AdminLogin() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            border:'1px solid grey',
+            borderRadius:5,
+            padding:5
           }}
         >
+          <div style={{ display:'flex',alignItems:'center',width:'100%'}}><img src={logo} style={{ width: 70, height: 70 }} /><div style={{marginLeft:10, fontWeight:'bolder',fontSize:25,color:'#0c5273'}}>QuickComm</div></div>
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>

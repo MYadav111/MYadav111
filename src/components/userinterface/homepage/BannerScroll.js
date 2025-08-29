@@ -31,7 +31,7 @@ export default function OfferScroll({ state }) {
         <div>
           <img
             src={`${serverURL}/images/${item.filename}`}
-            style={{ width: "96%", borderRadius: 10 }}
+            style={{ width: "99%", borderRadius: 10 }}
           />
         </div>
       );

@@ -13,7 +13,7 @@ var userStyle = makeStyles({
         height:'auto',
         padding:10,
         margin:10,
-        backGround:"#dae3b"
+        background: "#dff9fb",
     },
     headingStyle:{
         fontSize:24,

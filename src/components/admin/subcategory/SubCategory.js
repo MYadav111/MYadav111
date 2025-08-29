@@ -4,6 +4,8 @@ import cart from '../../../assets/cart.png'
 import logo from '../../../assets/logo.png'
 import SaveIcon from '@mui/icons-material/Save'
 import { userStyle } from "./SubCategoryCss"
+import list from '../../../assets/list.png'
+import { useNavigate } from 'react-router-dom'
 import Swal from "sweetalert2"
 import { LoadingButton } from "@mui/lab"
 import { postData ,getData,currentDate} from "../../../services/FetchNodeAdminServices"
@@ -11,6 +13,7 @@ import { postData ,getData,currentDate} from "../../../services/FetchNodeAdminSe
 
 export default function SubCategory(){
     const classes = userStyle()
+    var navigate = useNavigate();
     const [categoryId, setCategoryId] = useState('')
     const [subCategoryName, setSubCategoryName] = useState('')
     const [loadingStatus,setLoadingStatus] = useState(false)
@@ -118,6 +121,8 @@ export default function SubCategory(){
                 <div className={classes.mainHeadingStyle}>
                 <img src={logo} alt={logo} className={classes.imageStyle} />
                 <div className={classes.headingStyle}>SubCategory Register</div>
+                <img src={list} alt={list} style={{width:25,height:25,marginLeft:'50%'}} onClick={() => navigate("/dashboard/displayallsubcategory")}/>
+                   
                 </div>
             </Grid>
             <Grid item xs={12} className={classes.center}>

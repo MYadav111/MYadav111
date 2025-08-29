@@ -30,7 +30,6 @@ var userStyle = makeStyles({
   mainHeadingstyle: {
     padding: 5,
     display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -40,7 +39,7 @@ var userStyle = makeStyles({
     alignItems: "center",
     justifyContent: "center",
     width: 250,
-    height: 150,
+    height: 70,
   },
 
   errorMessageStyle: {

@@ -14,7 +14,7 @@ var userStyle = makeStyles({
         height: 'auto',
         padding: 10,
         margin: 10,
-        background: "Aqua"
+        background: "#dff9fb",
     },
     headingStyle: {
         fontSize: 24,

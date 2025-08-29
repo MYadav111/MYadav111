@@ -129,7 +129,6 @@ export default function Bankandotheroffers(props) {
           <Grid item xs={12}>
             <div className={classes.mainHeadingstyle}>
               <img src={logo} className={classes.imageStyle} />
-
               <div className={classes.headingStyle}>
                 Bank and Other Offers Details
               </div>

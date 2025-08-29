@@ -3,6 +3,8 @@ import { LoadingButton } from "@mui/lab";
 import cart from '../../../assets/cart.png'
 import logo from '../../../assets/logo.png'
 import Swal from "sweetalert2"
+import list from '../../../assets/list.png'
+import { useNavigate } from 'react-router-dom'
 import SaveIcon from '@mui/icons-material/Save'
 import { useState, useEffect } from "react";
 import { userStyle } from "./BrandCss";
@@ -12,6 +14,7 @@ import { postData, getData, currentDate } from "../../../services/FetchNodeAdmin
 
 export default function Brand() {
     const classes = userStyle()
+    var navigate = useNavigate();
     const [categoryId, setCategoryId] = useState('')
     const [subCategoryId, setSubCategoryId] = useState('')
     const [errorMessages, setErrorMessages] = useState({})
@@ -133,6 +136,8 @@ export default function Brand() {
                         <div className={classes.mainHeadingStyle}>
                             <img src={logo} alt={logo} className={classes.imageStyle} />
                             <div className={classes.headingStyle} >Brand Register</div>
+                            <img src={list} alt={list} style={{width:25,height:25,marginLeft:'50%'}} onClick={() => navigate("/dashboard/displayallbrand")}/>
+                 
                         </div>
                     </Grid>
                     <Grid item xs={6}>

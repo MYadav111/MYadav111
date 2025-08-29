@@ -18,7 +18,7 @@ export default function OfferScroll({ state }) {
     infinite: true,
     speed: 500,
     slidesToShow: matches ? 3 : 1,
-    slidesToScroll: auto,
+    slidesToScroll: 1,
     arrows: false,
   };
 

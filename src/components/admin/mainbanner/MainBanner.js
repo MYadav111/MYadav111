@@ -7,23 +7,16 @@ import {
   MenuItem,
   Button,
   Grid,
-  TextField,
   Avatar,
 } from "@mui/material";
 import logo from "../../../assets/logo.png";
 import cart from "../../../assets/cart.png";
-import { useState, useEffect } from "react";
-import ReactQuill from "react-quill";
+import { useState } from "react";
 import "react-quill/dist/quill.snow.css";
 import { LoadingButton } from "@mui/lab";
 import SaveIcon from "@mui/icons-material/Save";
 import Swal from "sweetalert2";
-import {
-  postData,
-  currentDate,
-  getData,
-  createDate,
-} from "../../../services/FetchNodeAdminServices";
+import {postData,currentDate} from "../../../services/FetchNodeAdminServices";
 
 export default function Mainbanner(props) {
   var classes = userStyle();
@@ -43,7 +36,7 @@ export default function Mainbanner(props) {
   const handleImage = (e) => {
     handleErrorMessages("filenames", null);
 
-    if (status == "hide") {
+    if (status === "hide") {
       setOpen(false);
     } else {
       setOpen(true);
@@ -145,22 +138,21 @@ export default function Mainbanner(props) {
               <div className={classes.headingStyle}>Mainbanner Details</div>
             </div>
           </Grid>
-
           <Grid item xs={4}>
             <FormControl fullWidth>
               {errorMessages?.status ? (
                 <InputLabel>
-                  <div className={classes.errorMessageStyle}>Status</div>
+                  <div className={classes.errorMessageStyle} >Status</div>
                 </InputLabel>
               ) : (
-                <InputLabel>Status</InputLabel>
+                <InputLabel >Status</InputLabel>
               )}
               <Select
                 value={status}
                 onFocus={() => handleErrorMessages("status", null)}
                 error={errorMessages?.status}
                 label="Status"
-                onChange={(e) => handleStatus(e.target.value)}
+                onChange={(e) => handleStatus(e.target.value)} 
               >
                 <MenuItem value={"show"}>Show</MenuItem>
                 <MenuItem value={"hide"}>Hide</MenuItem>
@@ -174,20 +166,20 @@ export default function Mainbanner(props) {
             </FormControl>
           </Grid>
 
-          <Grid item xs={12} className={classes.center}>
+          <Grid item xs={4} className={classes.center}>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-              }}
-            >
+              }}>
+
               <Button
                 variant="contained"
                 component="label"
-                style={{ width: "100px" }}
-              >
+                style={{ width: "100px" }}>
+
                 Upload
                 <input
                   onChange={handleImage}
@@ -208,18 +200,17 @@ export default function Mainbanner(props) {
             </div>
           </Grid>
 
-          <Grid item xs={12} className={classes.center}>
+          <Grid item xs={4} className={classes.center}>
             {open ? (
               <div>
                 {filenames.fileName != cart ? (
                   <Avatar
-                    style={{ width: 250, height: 150 }}
                     src={filenames.fileName}
                     variant="rounded"
                   />
                 ) : (
                   <Avatar
-                    style={{ width: 70, height: 60 }}
+                  
                     src={filenames.fileName}
                     variant="rounded"
                   />

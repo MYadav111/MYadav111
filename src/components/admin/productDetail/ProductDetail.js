@@ -11,9 +11,13 @@ import { userStyle } from "./ProductDetailCss";
 import {postData,currentDate,getData,} from "../../../services/FetchNodeAdminServices";
 // import { Form } from "react-router-dom";
 import { useEffect } from "react";
+import list from '../../../assets/list.png'
+import { useNavigate } from "react-router-dom";
+
 export default function ProductDetail(props) {
   var classes = userStyle();
   // const [value, setValue] = useState('');
+  const navigate= useNavigate();
 
   const [categoryId, setCategoryId] = useState("");
   const [subcategoryId, setSubCategoryId] = useState("");
@@ -39,6 +43,7 @@ export default function ProductDetail(props) {
   const [subcategoryList, setSubCategoryList] = useState([]);
   const [brandList, setBrandList] = useState([]);
   const [productList, setProductList] = useState([]);
+
 
   const fetchAllCategory = async () => {
     var result = await getData("category/display_all_category");
@@ -277,6 +282,8 @@ export default function ProductDetail(props) {
             <div className={classes.mainHeadingstyle}>
               <img src={logo} className={classes.imageStyle} />
               <div className={classes.headingStyle}>Product Register</div>
+              <img src={list} alt={list} style={{width:25,height:25,marginLeft:'50%'}} onClick={() => navigate("/dashboard/displayallproductdetail")}/>
+                 
             </div>
           </Grid>
           <Grid item xs={3}>
@@ -408,7 +415,7 @@ export default function ProductDetail(props) {
                 onChange={(e) => setWeightType(e.target.value)}
               >
                 <MenuItem value="kg">kg</MenuItem>
-                <MenuItem value="gm">g</MenuItem>
+                <MenuItem value="g">g</MenuItem>
                 <MenuItem value="ml">ml</MenuItem>
                 <MenuItem value="l">l</MenuItem>
               </Select>

@@ -1,8 +1,10 @@
 import { AppBar } from '@mui/material'
+// import { useState } from 'react'
+// import { getData } from '../../../services/FetchNodeAdminServices'
 import Box from '@mui/material/Box'
 import logo from '../../../assets/logo.png'
 import { Grid } from '@mui/material'
-export default function Footer() {
+export default function Footer(props) {
     return (
         <Box style={{ marginTop: 50 }}>
             <AppBar position="static" style={{ backgroundColor: '#f5f5f5', display: 'flex', flexDirection: 'column' }}>

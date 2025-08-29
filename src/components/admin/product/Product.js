@@ -21,9 +21,12 @@ import {
   postData,
   getData,
 } from "../../../services/FetchNodeAdminServices";
+import list from '../../../assets/list.png'
+import { useNavigate } from "react-router-dom";
 
 export default function Product() {
   const classes = userStyle();
+  const navigate = useNavigate();
   const [categoryId, setCategoryId] = useState("");
   const [subCategoryId, setSubCategoryId] = useState("");
   const [brandId, setBrandId] = useState("");
@@ -196,6 +199,8 @@ export default function Product() {
             <div className={classes.mainHeadingstyle}>
               <img src={logo} alt={logo} className={classes.imageStyle} />
               <div className={classes.headingStyle}>Product Register</div>
+              <img src={list} alt={list} style={{width:25,height:25,marginLeft:'50%'}} onClick={() => navigate("/dashboard/displayallproduct")}/>
+                 
             </div>
           </Grid>
           <Grid item xs={4}>

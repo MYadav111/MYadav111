@@ -20,6 +20,7 @@ var userStyle = makeStyles({
         marginLeft: 10,
       },
       imageStyle: {
+        marginLeft:10,
         width: 55,
         height: 45,
       },
@@ -29,7 +30,7 @@ var userStyle = makeStyles({
         padding: 5,
       },
       center: {
-        display: "flex",
+        // display: "flex",
         alignItems: "center",
         justifyContent: "center",
       },

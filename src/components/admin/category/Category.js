@@ -2,16 +2,19 @@ import { Button, Grid, TextField, Avatar } from '@mui/material'
 import { LoadingButton } from "@mui/lab"
 import Divider from '@mui/material/Divider'
 import logo from '../../../assets/logo.png'
+import list from '../../../assets/list.png'
 import { userStyle } from './CategoryCss'
 import cart from '../../../assets/cart.png'
 import SaveIcon from '@mui/icons-material/Save'
 import { useState } from "react"
 import Swal from "sweetalert2"
+import { useNavigate } from 'react-router-dom'
 import { postData, currentDate } from '../../../services/FetchNodeAdminServices';
 
 
 export default function Category() {
     var classes = userStyle()
+    var navigate = useNavigate();
     const [categoryName, setCategoryName] = useState('')
     const [loadingStatus, setLoadingStatus] = useState(false)
     const [categoryIcon, setCategoryIcon] = useState({ bytes: '', fileName: cart })
@@ -99,6 +102,7 @@ export default function Category() {
                     <div className={classes.mainHeadingStyle}>
                         <img src={logo} alt={logo} className={classes.imageStyle} />
                         <div className={classes.headingStyle}>Category Register</div>
+                        <img src={list} alt={list} style={{width:25,height:25,marginLeft:'50%'}} onClick={() => navigate("/dashboard/displayallcategory")}/>
                     </div>
                 </Grid>
                 <Grid item xs={12}>
